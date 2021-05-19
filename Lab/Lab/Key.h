@@ -7,4 +7,11 @@ enum Key {
     TWO_DIMENSIONAL_ARRAY //Двумерный массив
 };
 
+//Способ вывода матрицы
+enum Key_out {
+    BY_LINE, //По строкам
+    BY_COLUMN, //По столбцам
+    ONE_DIMENSIONAL //В виде одномерного массива
+};
+
 #endif //KEY_H
