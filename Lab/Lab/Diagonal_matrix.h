@@ -15,4 +15,7 @@ void In_Diagonal_matrix(int N, Diagonal_matrix& D_m, ifstream& ifst);
 //Функция вывода диагональной матрицы
 void Out_Diagonal_matrix(int N, Diagonal_matrix& D_m, ofstream& ofst);
 
+//Функция подсчета суммы элементов диагональной матрицы
+int Sum_Diagonal_matrix(int N, Diagonal_matrix& D_m);
+
 #endif //DIAGONAL_MATRIX_H

@@ -50,3 +50,18 @@ void Out_Matrix(Matrix* M, ofstream& ofst) {
         ofst << "Incorrect element!" << endl;
     }
 }
+
+int Sum_Matrix(Matrix* M) {
+    if (M->K == TWO_DIMENSIONAL_ARRAY)
+    {
+        return Sum_Two_dimensional_array(M->N, M->T_d_a); //Подсчет суммы элементов обычного двумерного массива
+    }
+    else if (M->K == DIAGONAL_MATRIX)
+    {
+        return Sum_Diagonal_matrix(M->N, M->D_m); //Подсчет суммы элементов диагональной матрицы
+    }
+    else
+    {
+        return -1;
+    }
+}

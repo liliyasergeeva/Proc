@@ -31,3 +31,14 @@ void Out_Diagonal_matrix(int N, Diagonal_matrix& D_m, ofstream& ofst)
         ofst << endl;
     }
 }
+
+int Sum_Diagonal_matrix(int N, Diagonal_matrix& D_m)
+{
+    int Sum = 0;
+
+    for (int i = 0; i < N; i++)
+    {
+        Sum += D_m.Array[i];
+    }
+    return Sum;
+}

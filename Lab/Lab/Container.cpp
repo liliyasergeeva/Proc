@@ -27,6 +27,8 @@ void Out_Container(Container& C, ofstream& ofst) {
     {
         ofst << i << ": "; //Выводим номер матрицы
         Out_Matrix(C.Cont[i], ofst); //Выводим матрицу
+
+        ofst << "Sum of matrix elements = " << Sum_Matrix(C.Cont[i]) << endl;
     }
 }
 
