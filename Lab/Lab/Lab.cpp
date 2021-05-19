@@ -1,5 +1,4 @@
 ﻿#include <iostream>
-#include <fstream>
 
 #include "Container.h"
 
@@ -33,6 +32,8 @@ int main(int argc, char* argv[])
     ofst << "Filled container. " << endl;
 
     Out_Container(C, ofst); //Вывод контейнера
+
+    Out_Only_Two_Dim(C, ofst); //Вывод только двумерных массивов
 
     Clear_Container(C); //Очистка контейнера
 
