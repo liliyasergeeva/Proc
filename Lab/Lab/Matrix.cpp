@@ -54,14 +54,19 @@ void Out_Matrix(Matrix* M, ofstream& ofst) {
 int Sum_Matrix(Matrix* M) {
     if (M->K == TWO_DIMENSIONAL_ARRAY)
     {
-        return Sum_Two_dimensional_array(M->N, M->T_d_a); //Подсчет суммы элементов обычного двумерного массива
+        return Sum_Two_dimensional_array(M->N, M->T_d_a);
     }
     else if (M->K == DIAGONAL_MATRIX)
     {
-        return Sum_Diagonal_matrix(M->N, M->D_m); //Подсчет суммы элементов диагональной матрицы
+        return Sum_Diagonal_matrix(M->N, M->D_m);
     }
     else
     {
         return -1;
     }
+}
+
+bool Compare(Matrix* First, Matrix* Second)
+{
+    return Sum_Matrix(First) > Sum_Matrix(Second);
 }

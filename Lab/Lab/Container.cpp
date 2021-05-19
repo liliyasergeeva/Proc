@@ -40,3 +40,21 @@ void Clear_Container(Container& C) {
     
     C.Len = 0;
 }
+
+void Sort(Container& C)
+{
+    //Сортируем пузырьком
+    for (int i = 0; i < C.Len - 1; i++) 
+    { 
+        for (int j = i + 1; j < C.Len; j++) 
+        { 
+            //Компаратором сравниваем суммы элементов матриц
+            if (Compare(C.Cont[i], C.Cont[j])) 
+            { 
+                Matrix* Temp = C.Cont[i]; 
+                C.Cont[i] = C.Cont[j]; 
+                C.Cont[j] = Temp; 
+            } 
+        } 
+    }
+}

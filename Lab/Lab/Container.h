@@ -29,4 +29,7 @@ void Out_Container(Container& C, ofstream& ofst);
 //Функция очистки контейнера
 void Clear_Container(Container& C);
 
+//Функция сортировки контейнера
+void Sort(Container& C);
+
 #endif //CONTAINER_H
