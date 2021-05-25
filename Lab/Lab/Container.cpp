@@ -56,3 +56,16 @@ void Sort(Container& C)
         } 
     }
 }
+
+void Out_Only_Two_Dim(Container& C, ofstream& ofst) {
+    ofst << endl << "Only Two Dimensional arrays." << endl;
+
+    for (int i = 0; i < C.Len; i++)
+    {
+        if (C.Cont[i]->K == TWO_DIMENSIONAL_ARRAY) //Проверка того, что матрица - обычный думерный массив
+        {
+            ofst << i << ": ";
+            Out_Matrix(C.Cont[i], ofst);
+        }
+    }
+}

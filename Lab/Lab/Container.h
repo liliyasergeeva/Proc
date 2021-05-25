@@ -32,4 +32,7 @@ void Clear_Container(Container& C);
 //Функция сортировки контейнера
 void Sort(Container& C);
 
+//Функция вывода только двумерных массивов
+void Out_Only_Two_Dim(Container& C, ofstream& ofst);
+
 #endif //CONTAINER_H

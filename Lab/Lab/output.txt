@@ -17,5 +17,11 @@ Sum of matrix elements = 37
 4 5 6 0 
 7 8 9 0 
 Sum of matrix elements = 45
+
+Only Two Dimensional arrays.
+1: It's two dimensional matrix with dimension = 3
+1 2 3 
+4 0 6 
+7 5 9 
 Empty container. 
 Container contains 0 elements.
