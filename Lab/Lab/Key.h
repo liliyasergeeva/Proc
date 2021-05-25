@@ -5,7 +5,7 @@
 enum Key {
     DIAGONAL_MATRIX, //Диагональная матрицы
     TWO_DIMENSIONAL_ARRAY, //Двумерный массив
-    TRIANGULAR_MATRIX //Треугольная матрицы
+    TRIANGULAR_MATRIX
 };
 
 #endif //KEY_H

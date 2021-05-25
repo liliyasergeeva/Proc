@@ -43,3 +43,22 @@ void Out_Triangular_matrix(int N, Triangular_matrix& T_m, ofstream& ofst)
         ofst << endl;
     }
 }
+
+int Sum_Triangular_matrix(int N, Triangular_matrix& T_m)
+{
+    int Temp_N = N;
+    int Array_size = 0;
+
+    while (Temp_N) {
+        Array_size += Temp_N;
+        Temp_N--;
+    }
+
+    int Sum = 0;
+
+    for (int i = 0; i < Array_size; i++) {
+        Sum += T_m.Array[i];
+    }
+
+    return Sum;
+}

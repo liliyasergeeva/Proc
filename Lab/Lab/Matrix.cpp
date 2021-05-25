@@ -1,6 +1,7 @@
 #include "Matrix.h"
 #include "Two_dimensional_array.h"
 #include "Diagonal_matrix.h"
+#include "Triangular_matrix.h"
 
 Matrix* In_Matrix(ifstream& ifst) {
     Matrix* M; //Создаем указатель на матрицу
@@ -74,6 +75,10 @@ int Sum_Matrix(Matrix* M) {
     else if (M->K == DIAGONAL_MATRIX)
     {
         return Sum_Diagonal_matrix(M->N, M->D_m);
+    }
+    else if (M->K == TRIANGULAR_MATRIX)
+    {
+        return Sum_Triangular_matrix(M->N, M->T_m);
     }
     else
     {

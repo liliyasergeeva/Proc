@@ -1,7 +1,4 @@
-﻿// 2lab_New_Class.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
-#include <iostream>
+﻿#include <iostream>
 #include <fstream>
 
 #include "Container.h"
