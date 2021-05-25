@@ -1,7 +1,6 @@
 #include "Matrix.h"
 #include "Two_dimensional_array.h"
 #include "Diagonal_matrix.h"
-#include "Triangular_matrix.h"
 
 Matrix* In_Matrix(ifstream& ifst) {
     Matrix* M; //Создаем указатель на матрицу
@@ -70,6 +69,23 @@ Matrix* In_Matrix(ifstream& ifst) {
         M = new Matrix; //Выделяем память под матрицу
         M->K = TRIANGULAR_MATRIX; //Записываем тип матрицы
 
+        int K_out = 0;
+
+        ifst >> K_out; //Считываем способ вывода матрицы
+
+        if (K_out == 1)
+        {
+            M->K_o = BY_LINE;
+        }
+        else if (K_out == 2)
+        {
+            M->K_o = BY_COLUMN;
+        }
+        else if (K_out == 3)
+        {
+            M->K_o = ONE_DIMENSIONAL;
+        }
+
         ifst >> M->N; //Считываем размерность матрицы
 
         In_Triangular_matrix(M->N, M->T_m, ifst); //Считываем элементы матрицы
@@ -93,7 +109,7 @@ void Out_Matrix(Matrix* M, ofstream& ofst) {
     }
     else if (M->K == TRIANGULAR_MATRIX)
     {
-        Out_Triangular_matrix(M->N, M->T_m, ofst); //Выводим диагональную матрицу
+        Out_Triangular_matrix(M->K_o, M->N, M->T_m, ofst); //Выводим диагональную матрицу
     }
     else
     {
