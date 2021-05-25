@@ -18,15 +18,40 @@ void In_Two_dimensional_array(int N, Two_dimensional_array& T_d_a, ifstream& ifs
     }
 }
 
-void Out_Two_dimensional_array(int N, Two_dimensional_array& T_d_a, ofstream& ofst)
+void Out_Two_dimensional_array(Key_out K_o, int N, Two_dimensional_array& T_d_a, ofstream& ofst)
 {
     ofst << "It's two dimensional matrix with dimension = " << N << endl; //Выводим размерность массива
 
-    for (int i = 0; i < N; i++)
+    if (K_o == BY_LINE)
     {
-        for (int j = 0; j < N; j++)
+        for (int i = 0; i < N; i++)
         {
-            ofst << T_d_a.Array[i][j] << " "; //Выводим элементы массива
+            for (int j = 0; j < N; j++)
+            {
+                ofst << T_d_a.Array[i][j] << " ";
+            }
+            ofst << endl;
+        }
+    }
+    else if (K_o == BY_COLUMN)
+    {
+        for (int i = 0; i < N; i++)
+        {
+            for (int j = 0; j < N; j++)
+            {
+                ofst << T_d_a.Array[j][i] << " ";
+            }
+            ofst << endl;
+        }
+    }
+    else if (K_o == ONE_DIMENSIONAL)
+    {
+        for (int i = 0; i < N; i++)
+        {
+            for (int j = 0; j < N; j++)
+            {
+                ofst << T_d_a.Array[i][j] << " ";
+            }
         }
 
         ofst << endl;
