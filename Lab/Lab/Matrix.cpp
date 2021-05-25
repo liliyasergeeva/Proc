@@ -30,6 +30,17 @@ Matrix* In_Matrix(ifstream& ifst) {
 
         return M;
     }
+    else if (K == 3)
+    {
+        M = new Matrix; //Выделяем память под матрицу
+        M->K = TRIANGULAR_MATRIX; //Записываем тип матрицы
+
+        ifst >> M->N; //Считываем размерность матрицы
+
+        In_Triangular_matrix(M->N, M->T_m, ifst); //Считываем элементы матрицы
+
+        return M;
+    }
     else
     {
         return 0;
@@ -44,6 +55,10 @@ void Out_Matrix(Matrix* M, ofstream& ofst) {
     else if (M->K == DIAGONAL_MATRIX)
     {
         Out_Diagonal_matrix(M->N, M->D_m, ofst); //Выводим диагональную матрицу
+    }
+    else if (M->K == TRIANGULAR_MATRIX)
+    {
+        Out_Triangular_matrix(M->N, M->T_m, ofst); //Выводим диагональную матрицу
     }
     else
     {
