@@ -8,8 +8,7 @@ void In_Diagonal_matrix(int N, Diagonal_matrix& D_m, ifstream& ifst)
     string Alph_num = "0123456789";
     string Temp_Str = "";
 
-    for (int i = 0; i < N; i++)
-    {
+    for (int i = 0; i < N; i++) {
         ifst >> Temp_Str;
 
         if (ifst.peek() == EOF) {
@@ -19,16 +18,14 @@ void In_Diagonal_matrix(int N, Diagonal_matrix& D_m, ifstream& ifst)
         }
 
         //Если считанное числе - пустая строка
-        if (Temp_Str == "")
-        {
+        if (Temp_Str == "") {
             //Завершение программы с ошибкой
             cout << "Input data is incomplete!";
             exit(1);
         }
 
         //Если число начинается с 0
-        if (Temp_Str[0] == '0' && Temp_Str.length() > 1)
-        {
+        if ((Temp_Str[0] == '0') && (Temp_Str.length() > 1)) {
             //Завершение программы с ошибкой
             cout << "Input data is incorrect!";
             exit(1);
@@ -49,58 +46,48 @@ void In_Diagonal_matrix(int N, Diagonal_matrix& D_m, ifstream& ifst)
     ifst.get(); //После считывания элементов массива в файле остается символ конца строки, считываем его
 }
 
-void Out_Diagonal_matrix(Key_out K_o, int N, Diagonal_matrix& D_m, ofstream& ofst)
-{
-    ofst << "It's diagonal matrix with dimension = " << N << endl; //Выводим размерность матрицы
+void Out_Diagonal_matrix(Key_out K_o, int N, Diagonal_matrix& D_m, ofstream& ofst) {
+    ofst << "It's diagonal matrix with dimension = " << N << endl;
 
-    if (K_o == BY_LINE)
-    {
-        for (int i = 0; i < N; i++)
-        {
-            for (int j = 0; j < N; j++)
-            {
-                if (i == j)
-                {
+    if (K_o == BY_LINE) { //Вывод по строкам
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if (i == j) {
                     ofst << D_m.Array[i] << " ";
                 }
-                else
-                {
+                else {
                     ofst << "0 ";
                 }
             }
+
             ofst << endl;
         }
+
+        ofst << endl;
     }
-    else if (K_o == BY_COLUMN)
-    {
-        for (int i = 0; i < N; i++)
-        {
-            for (int j = 0; j < N; j++)
-            {
-                if (i == j)
-                {
+    else if (K_o == BY_COLUMN) { //Вывод по столбцам
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if (i == j) {
                     ofst << D_m.Array[j] << " ";
                 }
-                else
-                {
+                else {
                     ofst << "0 ";
                 }
             }
+
             ofst << endl;
         }
+
+        ofst << endl;
     }
-    else if (K_o == ONE_DIMENSIONAL)
-    {
-        for (int i = 0; i < N; i++)
-        {
-            for (int j = 0; j < N; j++)
-            {
-                if (i == j)
-                {
+    else if (K_o == ONE_DIMENSIONAL) { //Вывод в виде одномерного массива
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if (i == j) {
                     ofst << D_m.Array[i] << " ";
                 }
-                else
-                {
+                else {
                     ofst << "0 ";
                 }
             }
@@ -110,13 +97,12 @@ void Out_Diagonal_matrix(Key_out K_o, int N, Diagonal_matrix& D_m, ofstream& ofs
     }
 }
 
-int Sum_Diagonal_matrix(int N, Diagonal_matrix& D_m)
-{
+int Sum_Diagonal_matrix(int N, Diagonal_matrix& D_m) {
     int Sum = 0;
 
-    for (int i = 0; i < N; i++)
-    {
+    for (int i = 0; i < N; i++) {
         Sum += D_m.Array[i];
     }
+
     return Sum;
 }

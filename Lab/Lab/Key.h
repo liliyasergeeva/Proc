@@ -5,8 +5,8 @@
 enum Key {
     DIAGONAL_MATRIX, //Диагональная матрицы
     TWO_DIMENSIONAL_ARRAY, //Двумерный массив
-    TRIANGULAR_MATRIX,
-    ERROR
+    TRIANGULAR_MATRIX, //Треугольная матрица
+    ERROR //Ошибочный массив (некорректный ввод данных)
 };
 
 //Способ вывода матрицы

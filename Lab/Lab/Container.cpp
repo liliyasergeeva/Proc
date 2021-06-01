@@ -5,14 +5,12 @@ void Init_Container(Container& C) {
 }
 
 void In_Container(Container& C, ifstream& ifst) {
-    while (!ifst.eof()) //Читаем до конца файла
+    while (!ifst.eof())
     {
-        if ((C.Cont[C.Len] = In_Matrix(ifst)) != 0) //Считываем очередную матрицу 
-        { 
+        if ((C.Cont[C.Len] = In_Matrix(ifst))) { 
             C.Len++;
 
-            if (C.Len == C.Max_len) //Проверка на переполнение контейнера
-            {
+            if (C.Len == C.Max_len) {
                 break;
             }
         }
@@ -21,37 +19,30 @@ void In_Container(Container& C, ifstream& ifst) {
 
 void Out_Container(Container& C, ofstream& ofst) {
     ofst << "Container contains " << C.Len 
-        << " elements." << endl; //Выводим длину контейнера
+        << " elements." << endl << endl;
 
-    for (int i = 0; i < C.Len; i++)
-    {
-        ofst << i << ": "; //Выводим номер матрицы
-        Out_Matrix(C.Cont[i], ofst); //Выводим матрицу
+    for (int i = 0; i < C.Len; i++) {
+        ofst << i << ": "; 
+        Out_Matrix(C.Cont[i], ofst); 
 
-        if (C.Cont[i]->K != ERROR)
-        {
-            ofst << "Sum of matrix elements = " << Sum_Matrix(C.Cont[i]) << endl;
+        if (C.Cont[i]->K != ERROR) {
+            ofst << "Sum of matrix elements = " << Sum_Matrix(C.Cont[i]) << endl << endl;
         }
     }
 }
 
 void Clear_Container(Container& C) {
-    for (int i = 0; i < C.Len; i++) 
-    {
-        delete C.Cont[i]; //Очищаем память, вылеленную для каждой матрицы
+    for (int i = 0; i < C.Len; i++)  {
+        delete C.Cont[i]; 
     }
     
     C.Len = 0;
 }
 
-void Sort(Container& C)
-{
-    for (int i = 0; i < C.Len - 1; i++) 
-    { 
-        for (int j = i + 1; j < C.Len; j++) 
-        { 
-            if (Compare(C.Cont[i], C.Cont[j])) 
-            { 
+void Sort(Container& C) {
+    for (int i = 0; i < C.Len - 1; i++)  { 
+        for (int j = i + 1; j < C.Len; j++)  { 
+            if (Compare(C.Cont[i], C.Cont[j]))  { 
                 Matrix* Temp = C.Cont[i]; 
                 C.Cont[i] = C.Cont[j]; 
                 C.Cont[j] = Temp; 
@@ -61,12 +52,10 @@ void Sort(Container& C)
 }
 
 void Out_Only_Two_Dim(Container& C, ofstream& ofst) {
-    ofst << endl << "Only Two Dimensional arrays." << endl;
+    ofst << "Only Two Dimensional arrays." << endl << endl;
 
-    for (int i = 0; i < C.Len; i++)
-    {
-        if (C.Cont[i]->K == TWO_DIMENSIONAL_ARRAY) //Проверка того, что матрица - обычный думерный массив
-        {
+    for (int i = 0; i < C.Len; i++) {
+        if (C.Cont[i]->K == TWO_DIMENSIONAL_ARRAY) {
             ofst << i << ": ";
             Out_Matrix(C.Cont[i], ofst);
         }

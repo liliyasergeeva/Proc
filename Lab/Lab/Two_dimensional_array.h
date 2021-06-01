@@ -9,7 +9,7 @@ using namespace std;
 
 //Структура двумерного массива
 struct Two_dimensional_array {
-    int** Array;
+    int** Array; //Массив
 };
 
 //Функция ввода двумерного массива
@@ -18,7 +18,7 @@ void In_Two_dimensional_array(int N, Two_dimensional_array& T_d_a, ifstream& ifs
 //Функция вывода двумерного массива
 void Out_Two_dimensional_array(Key_out K_o, int N, Two_dimensional_array& T_d_a, ofstream& ofst);
 
-//Функция подсчета суммы элементов диагональной матрицы
+//Функция подсчета суммы элементов двумерного массива
 int Sum_Two_dimensional_array(int N, Two_dimensional_array& T_d_a);
 
 #endif //TWO_DIMENSIONAL_ARRAY_H

@@ -7,8 +7,9 @@
 
 using namespace std;
 
+//Структура "треугольная матрица"
 struct Triangular_matrix {
-    int* Array;
+    int* Array; //Массив
 };
 
 //Функция ввода двумерного массива
