@@ -1,7 +1,11 @@
-﻿  Container.cpp
-  Diagonal_matrix.cpp
+﻿  Diagonal_matrix.cpp
+C:\Users\of913\OneDrive\Рабочий стол\3_1_2_1_Git\Proc\Lab\Lab\Diagonal_matrix.cpp(38,27): warning C4018: <: несоответствие типов со знаком и без знака
   Lab.cpp
   Matrix.cpp
+C:\Users\of913\OneDrive\Рабочий стол\3_1_2_1_Git\Proc\Lab\Lab\Matrix.cpp(80,23): warning C4018: <: несоответствие типов со знаком и без знака
   Triangular_matrix.cpp
+C:\Users\of913\OneDrive\Рабочий стол\3_1_2_1_Git\Proc\Lab\Lab\Triangular_matrix.cpp(47,27): warning C4018: <: несоответствие типов со знаком и без знака
+  Two_dimensional_array.cpp
+C:\Users\of913\OneDrive\Рабочий стол\3_1_2_1_Git\Proc\Lab\Lab\Two_dimensional_array.cpp(46,31): warning C4018: <: несоответствие типов со знаком и без знака
   Создание кода...
   Lab.vcxproj -> C:\Users\of913\OneDrive\Рабочий стол\3_1_2_1_Git\Proc\Lab\Debug\Lab.exe
